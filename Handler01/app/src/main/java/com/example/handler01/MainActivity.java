@@ -14,24 +14,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        handler=new Handler(new Handler.Callback() {
-            @Override
-            public boolean handleMessage(Message msg) {
-                if(msg.what==1){
-                    Bundle data=msg.getData();
-                    String s=data.getString("s");
-                    setTitle(s);
-                }
-                return false;
-            }
-        });
-    }
-
-    public void onBtnSendData(View view) {
-        Message msg=new Message();
-        msg.what=1;
-        Bundle data=msg.getData();
-        data.putString("s", "Hello World!");
-        handler.sendMessage(msg);
-    }
+ 
 }
